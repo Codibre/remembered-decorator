@@ -31,4 +31,28 @@ describe(fName(setupRemembered), () => {
 		expect(result2).toBe(result1);
 		expect(result3).toBe('result for id2');
 	});
+
+	it('should not apply remembered when instanceGetter returns undefined', async () => {
+		const stub = jest
+			.fn()
+			.mockImplementation((x) => ({ info: `result for ${x}` }));
+		class Test {
+			@UseRemembered(identity)
+			async test(id: string) {
+				return stub(id);
+			}
+		}
+
+		setupRemembered(() => undefined);
+		const instance = new Test();
+		const [result1, result2] = await Promise.all([
+			instance.test('id1'),
+			instance.test('id1'),
+		]);
+
+		expect(stub).toHaveCallsLike(['id1'], ['id1']);
+		expect(result1).toEqual({ info: 'result for id1' });
+		expect(result2).toEqual({ info: 'result for id1' });
+		expect(result2).not.toBe(result1);
+	});
 });

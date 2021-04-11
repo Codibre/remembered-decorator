@@ -19,4 +19,15 @@ describe(fName(getRememberedByClassFactory), () => {
 		expect(result3).toBeInstanceOf(Remembered);
 		expect(result3).not.toBe(result1);
 	});
+
+	it('should return undefined when create function returns undefined', () => {
+		const stub = jest.fn();
+		class Test1 {}
+
+		const getRememberedByClass = getRememberedByClassFactory(stub);
+		const result1 = getRememberedByClass(Test1);
+
+		expect(stub).toHaveCallsLike([Test1]);
+		expect(result1).toBeUndefined();
+	});
 });
