@@ -4,7 +4,7 @@ import { Remembered } from 'remembered';
 export function getRememberedByClassFactory(
 	create: (cls: AbstractClass<unknown>) => Remembered,
 ) {
-  const map = new Map<AbstractClass<unknown>, Remembered>();
+	const map = new Map<AbstractClass<unknown>, Remembered>();
 	return (cls: AbstractClass<unknown>) => {
 		let result = map.get(cls);
 		if (!result) {
