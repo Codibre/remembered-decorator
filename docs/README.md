@@ -1,6 +1,6 @@
-fluent-iterable - v0.1.1
+fluent-iterable - v0.1.2
 
-# fluent-iterable - v0.1.1
+# fluent-iterable - v0.1.2
 
 ## Table of contents
 
@@ -17,7 +17,7 @@ fluent-iterable - v0.1.1
 
 ### UseRemembered
 
-• `Const` **UseRemembered**: *IterableMethodDecorator*<[getKey: Func<Args, any\>]\>
+• `Const` **UseRemembered**: *IterableMethodDecorator*<[getKey: function, noCacheIf?: function]\>
 
 ## Functions
 
@@ -25,11 +25,11 @@ fluent-iterable - v0.1.1
 
 ▸ **getRememberedByClassFactory**(`create`: (`cls`: *AbstractClass*<unknown\>) => Remembered \| *undefined*): *function*
 
-#### Parameters:
+#### Parameters
 
-Name | Type |
-:------ | :------ |
-`create` | (`cls`: *AbstractClass*<unknown\>) => Remembered \| *undefined* |
+| Name | Type |
+| :------ | :------ |
+| `create` | (`cls`: *AbstractClass*<unknown\>) => Remembered \| *undefined* |
 
 **Returns:** (`cls`: *AbstractClass*<unknown\>) => *undefined* \| *Remembered*
 
@@ -39,10 +39,10 @@ ___
 
 ▸ **setupRemembered**(`instanceGetter`: (`cls`: *AbstractClass*<Object\>) => Remembered \| *undefined*): *void*
 
-#### Parameters:
+#### Parameters
 
-Name | Type |
-:------ | :------ |
-`instanceGetter` | (`cls`: *AbstractClass*<Object\>) => Remembered \| *undefined* |
+| Name | Type |
+| :------ | :------ |
+| `instanceGetter` | (`cls`: *AbstractClass*<Object\>) => Remembered \| *undefined* |
 
 **Returns:** *void*

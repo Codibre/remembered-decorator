@@ -1,5 +1,8 @@
 
-## 0.1.1
+## 0.1.2
+* 9df9bf0 beterring decorator mechanics
+## v0.1.1
+* dddae6f 0.1.1
 * ec632de treating case where instanceGetter returns undefined
 * 1ec00bf fixing lint
 ## v0.1.0
